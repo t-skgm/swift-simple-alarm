@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="simple_alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-f4-JPO">
+                                <rect key="frame" x="18" y="223" width="338" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="TaW-2x-O56"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="-62829940738.222786">
+                                    <!--0009-12-31 14:41:01 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="changeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="xHe-X5-cKQ"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-Q8-AxB">
+                                <rect key="frame" x="0.0" y="92" width="375" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="usg-mM-WO3">
+                                <rect key="frame" x="116" y="420" width="142" height="46"/>
+                                <color key="backgroundColor" red="0.0" green="0.18861038350000001" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="28"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="8hR-9n-zUR">
+                                <rect key="frame" x="116" y="497" width="142" height="46"/>
+                                <color key="backgroundColor" white="0.5093470982142857" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="9PO-s5-qqv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="28"/>
+                                <state key="normal" title="RESET">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ubb-f4-JPO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="77n-1L-7Gn"/>
+                            <constraint firstItem="Ubb-f4-JPO" firstAttribute="top" secondItem="fVE-Q8-AxB" secondAttribute="bottom" constant="35" id="9mM-0I-p9c"/>
+                            <constraint firstItem="fVE-Q8-AxB" firstAttribute="centerX" secondItem="Ubb-f4-JPO" secondAttribute="centerX" id="ADC-UL-GfU"/>
+                            <constraint firstItem="8hR-9n-zUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="BWW-Ux-dJY"/>
+                            <constraint firstItem="fVE-Q8-AxB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="Huw-no-gOr"/>
+                            <constraint firstItem="8hR-9n-zUR" firstAttribute="leading" secondItem="usg-mM-WO3" secondAttribute="leading" id="YFW-VW-2IV"/>
+                            <constraint firstItem="8hR-9n-zUR" firstAttribute="trailing" secondItem="usg-mM-WO3" secondAttribute="trailing" id="cWX-Bw-kmT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hR-9n-zUR" secondAttribute="bottom" constant="124" id="e7G-Yq-Abx"/>
+                            <constraint firstAttribute="trailing" secondItem="fVE-Q8-AxB" secondAttribute="trailing" id="gny-dg-Mt3"/>
+                            <constraint firstItem="fVE-Q8-AxB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iAP-xc-LfN"/>
+                            <constraint firstItem="usg-mM-WO3" firstAttribute="top" secondItem="Ubb-f4-JPO" secondAttribute="bottom" constant="85" id="mUf-Ul-Ngy"/>
+                            <constraint firstItem="8hR-9n-zUR" firstAttribute="top" secondItem="usg-mM-WO3" secondAttribute="bottom" constant="31" id="nea-r3-tbJ"/>
+                            <constraint firstItem="Ubb-f4-JPO" firstAttribute="centerX" secondItem="usg-mM-WO3" secondAttribute="centerX" id="swi-Xp-N16"/>
+                            <constraint firstItem="Ubb-f4-JPO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="223" id="wHg-pL-r4K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timePicker" destination="Ubb-f4-JPO" id="WHz-y7-cHF"/>
+                        <outlet property="timeLabel" destination="fVE-Q8-AxB" id="Bur-1G-r6b"/>
+                        <outlet property="resetBT" destination="8hR-9n-zUR" id="Swh-GH-Brl"/>
+                        <outlet property="toggleBT" destination="usg-mM-WO3" id="McE-gh-eb1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
