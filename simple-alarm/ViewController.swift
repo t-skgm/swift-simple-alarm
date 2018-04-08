@@ -13,19 +13,16 @@ class ViewController: UIViewController {
         toggleBT.addTarget(self, action: #selector(self.handleToggleBT), for: .touchUpInside)
         resetBT.addTarget(self, action: #selector(self.handleResetBT), for: .touchUpInside)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     var timer = Timer()
     var isStarted = false
     var count: Float = 0
     var pausedTime: Float = 0
 
-    var bigFont = UIFont(name: "Zapfino", size: 120)
-    var initFont = UIFont(name: "Arial", size: 80)
-    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var resetBT: UIButton!
